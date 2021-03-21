@@ -1,1 +1,12 @@
 <h1>hello {{request.user}}</h1>
+
+
+<p>
+    {% for tag in object_list %}
+    <h1>{{tag.author}}</h1><br>
+    <h1>{{tag.title}}</h1><br>
+    <img src="{{tag.image.url}}" alt="Girl in a jacket">
+    <h1>{{tag.description}}</h1><br>
+    <h1>{{tag.date}}</h1><br>
+    {% endfor %}
+</p>
