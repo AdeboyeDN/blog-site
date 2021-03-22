@@ -1,3 +1,4 @@
+from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.views import generic
 from .models import blog
@@ -21,3 +22,20 @@ class blogDetailView(generic.DetailView):
     model = blog
     template_name = "detail.html"
     context_object_name = "tag"
+
+
+class blogUpdateView(generic.UpdateView):
+    model = blog
+    template_name = "update.html"
+    fields = ['title','image','description']
+
+class blogDeleteView(generic.DeleteView):
+    model = blog
+    template_name = "delete.html"
+    context_object_name = "tag"
+    success_url = reverse_lazy('home')
+
+
+
+
+

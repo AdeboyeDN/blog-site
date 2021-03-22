@@ -1,12 +1,14 @@
 <h1>hello {{request.user}}</h1>
-
+{% if request.user %}
+<a href="{% url 'create' %}" >create your blog post</a>
+{% endif %}
 <hr>
 {% for tag in object_list %}
 <hr>
 <h1>{{tag.author}}</h1><br>
 <h1>{{tag.title}}</h1><br>
 <h1>{{tag.date}} //{{tag.id}}</h1><br>
-<a href="{% url 'detail' tag.slug tag.pk%}" >view post</a>
+<a href="{% url 'detail' tag.slug tag.pk %}" >view post</a>
 <hr>
 {% endfor %}
 <hr>

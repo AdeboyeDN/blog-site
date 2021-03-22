@@ -7,5 +7,10 @@
 {% endif %}
 <h1>{{tag.description}}</h1><br>
 <h1>{{tag.date}}</h1><br>
-<a href="{% url 'home'%}" >back</a>
+<a href="{% url 'home'%}" >back</a><br>
+{% if request.user == tag.author %}
+  <a href="{% url 'update' tag.slug tag.pk %}" >update post</a>
+  <a href="{% url 'delete' tag.slug tag.pk %}" >delete post</a>
+{% endif %}
+
 

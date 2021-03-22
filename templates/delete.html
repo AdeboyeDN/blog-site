@@ -1,0 +1,8 @@
+<h1>delete post '{{tag.title}}'</h1>
+<a href="{% url 'home'%}" >back</a><br>
+
+
+<form  method="POST">
+    {% csrf_token %}
+    <input type="submit" value='delete'>
+ </form>
