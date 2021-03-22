@@ -1,12 +1,9 @@
+<h1>hell detail</h1>
 
-<p>
-    {% for tag in object_list %}
-    <h1>{{tag.author}}</h1><br>
-    <h1>{{tag.title}}</h1><br>
-    {% if tag.image %}
-      <img src="{{tag.image.url}}" alt="Girl in a jacket">
-    {% endif %}
-    <h1>{{tag.description}}</h1><br>
-    <h1>{{tag.date}}</h1><br>
-    {% endfor %}
-</p>
+<h1>{{tag.author}}</h1><br>
+<h1>{{tag.title}}</h1><br>
+{% if tag.image %}
+<img src="{{tag.image.url}}" alt="Girl in a jacket">
+{% endif %}
+<h1>{{tag.description}}</h1><br>
+<h1>{{tag.date}}</h1><br>
