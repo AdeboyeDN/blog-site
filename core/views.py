@@ -24,12 +24,12 @@ class blogDetailView(generic.DetailView):
     context_object_name = "tag"
 
 
-class blogUpdateView(generic.UpdateView):
+class blogUpdateView(LoginRequiredMixin,generic.UpdateView):
     model = blog
     template_name = "update.html"
     fields = ['title','image','description']
 
-class blogDeleteView(generic.DeleteView):
+class blogDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = blog
     template_name = "delete.html"
     context_object_name = "tag"

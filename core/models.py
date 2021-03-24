@@ -14,7 +14,7 @@ class blog(models.Model):
     slug = models.SlugField(blank=True, null=False)
 
     class Meta:
-        ordering = ['-title']
+        ordering = ['-date']
 
     def get_absolute_url(self):
         return reverse("detail", kwargs={ "slug": self.slug, "pk": self.pk})

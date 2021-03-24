@@ -1,5 +1,5 @@
 <h1>hello {{request.user}}</h1>
-{% if request.user %}
+{% if request.user.is_staff %}
 <a href="{% url 'create' %}" >create your blog post</a>
 {% endif %}
 <hr>
