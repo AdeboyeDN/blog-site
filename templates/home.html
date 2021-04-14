@@ -1,16 +1,30 @@
-<h1>hello {{request.user}}</h1>
-{% if request.user.is_staff %}
-<a href="{% url 'create' %}" >create your blog post</a>
-{% endif %}
-<hr>
-{% for tag in object_list %}
-<hr>
-<h1>{{tag.author}}</h1><br>
-<h1>{{tag.title}}</h1><br>
-<h1>{{tag.date}} //{{tag.id}}</h1><br>
-<a href="{% url 'detail' tag.slug tag.pk %}" >view post</a>
-<hr>
-{% endfor %}
-<hr>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+     {% if request.user.is_staff %}
+     <div class="alert alert-info alert-dismissible fade show" role="alert">
+      Welcome {{request.user}}!    <a href="{% url 'create' %}" >create your blog post</a>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     {% else %}
+     <div class="alert alert-info alert-dismissible fade show" role="alert">
+     Welcome {{request.user}}!
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     {% endif %}
+     </div>
+    </div>
+
+
+     <hr>
+     {% for tag in object_list %}
+     <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{tag.title}}</h5>
+            <p class="card-text">{{tag.description}}</p>
+            <p class="card-text"><small class="text-muted">Created by {{tag.author}} ,on {{tag.date|date:"M"}}</small></p>
+            <a href="{% url 'detail' tag.slug tag.pk %}" >view post</a>
+        </div>
+    </div>
+     {% endfor %}
+{% endblock %}
 
 

@@ -1,16 +1,24 @@
-<h1>hell detail</h1>
+{% extends 'base.html' %}
+{% block content %}
 
-<h1>{{tag.author}}</h1><br>
-<h1>{{tag.title}}</h1><br>
-{% if tag.image %}
-<img src="{{tag.image.url}}" alt="Girl in a jacket">
-{% endif %}
-<h1>{{tag.description}}</h1><br>
-<h1>{{tag.date}}</h1><br>
-<a href="{% url 'home'%}" >back</a><br>
+<br>
+<button type="button" class="btn btn-link"><a href="{% url 'home'%}">Back</a> </button><br><br><br>
+<div class="card mb-3">
+  {% if tag.image %}
+     <img src="{{tag.image.url}}" class="card-img-top" alt="Girl in a jacket" wigth="200" height="500">
+  {% endif %}
+  <div class="card-body">
+    <h5 class="card-title">{{tag.title}}</h5>
+    <p class="card-text">{{tag.description}}</p>
+    <p class="card-text"><small class="text-muted">Created by {{tag.author}} ,on {{tag.date|date:"M"}}</small></p>
+  </div>
+</div>
+
 {% if request.user == tag.author %}
-  <a href="{% url 'update' tag.slug tag.pk %}" >update post</a>
-  <a href="{% url 'delete' tag.slug tag.pk %}" >delete post</a>
+<button type="button" class="btn btn-info"><a href="{% url 'update' tag.slug tag.pk %}">update Post</a></button>      <button type="button" class="btn btn-danger"><a href="{% url 'delete' tag.slug tag.pk %}">Delete</a> </button><br><br>
+
+
 {% endif %}
+{% endblock %}
 
 

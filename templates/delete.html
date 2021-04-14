@@ -1,8 +1,15 @@
-<h1>delete post '{{tag.title}}'</h1>
-<a href="{% url 'home'%}" >back</a><br>
-
-
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+ <div class="alert alert-info alert-dismissible fade show" role="alert">
+      Are you sure you want to delete "tag.title" 
+      
+ <br><br>     
+<button type="button" class="btn btn-info"><a href="{% url 'home' %}">Home</a></button>
 <form  method="POST">
     {% csrf_token %}
-    <input type="submit" value='delete'>
+    <input type="submit" value='delete' class="btn btn-danger">
  </form>
+ </div>
+
+ {% endblock %}

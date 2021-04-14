@@ -1,14 +1,18 @@
+
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 <h1>create blog</h1>
-
-<a href="{% url 'home'%}" >back</a><br>
+{% block content %}
+<button type="button" class="btn btn-link"><a href="{% url 'home'%}">Back</a> </button><br>
 {% if request.user.is_staff %}
 
 <form  method="POST" enctype="multipart/form-data">
   {% csrf_token %}
   {{form|crispy}}
-  <input type="submit" value='create' >
+  <input type="submit" value='create' class="btn btn-primary" >
 </form>
 {% else %}
 <p> you are not a staff contact blog owner to be a staff</p>
 {% endif %}
+
+{% endblock %}
