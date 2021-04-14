@@ -15,6 +15,7 @@ class blogCreateView(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
     
 class blogListView(generic.ListView):
+    paginate_by = 5
     model = blog
     template_name = "home.html"
 
