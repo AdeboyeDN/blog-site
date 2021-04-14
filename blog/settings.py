@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'account/login/'
 
 SITE_ID = 1
 
@@ -60,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'blog.urls'

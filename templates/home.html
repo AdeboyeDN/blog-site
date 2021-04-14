@@ -19,15 +19,15 @@
      <div class="card mb-3">
         <div class="card-body">
             <h5 class="card-title">{{tag.title}}</h5>
-            <p class="card-text">{{tag.description}}</p>
-            <p class="card-text"><small class="text-muted">Created by {{tag.author}} ,on {{tag.date|date:"M"}}</small></p>
+            <p class="card-text">{{tag.description|truncatechars:100}}</p>
+            <p class="card-text"><small class="text-muted">Created by {{tag.author}} ,on {{tag.date|date:"D, d M, Y"}}</small></p>
             <a href="{% url 'detail' tag.slug tag.pk %}" >view post</a>
         </div>
     </div>
      {% endfor %}
 
 
-
+{% if tag %}
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
@@ -45,6 +45,7 @@
         {% endif %}
     </span>
 </div>
+{% endif %}
 {% endblock %}
 
 
