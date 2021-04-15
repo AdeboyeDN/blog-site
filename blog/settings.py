@@ -142,10 +142,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
- 
-
-EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
-
 
 MEDIA_ROOT =  (
     BASE_DIR / 'media'
@@ -157,14 +153,6 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-"""
-EMAIL_HOST =
-EMAIL_PORT =
-EMAIL_HOST_USER =
-EMAIL_HOST_PASSWORD =
-EMAIL_USE_TLS =
-EMAIL_USE_SSL =
-"""
 
 
 
