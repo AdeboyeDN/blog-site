@@ -25,7 +25,7 @@ SECRET_KEY = '7$3y=d3_qf*rc^a&i_v)6)y%+f586jom82x6#l!j=(+qr^!ndg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 #https://developerola-blog.herokuapp.com/
-ALLOWED_HOSTS = ['developerola-blog.herokuapp.com', '127.0.0.1/']
+ALLOWED_HOSTS = ['developerola-blog.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
