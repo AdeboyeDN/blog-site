@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -95,7 +95,13 @@ DATABASES = {
     }
 }
 
+if os.getenv("ENVIRONMENT"):
+    import dj_database_url
+    DATABASES = {}
+    DEBUG = False
 
+    # you need to use postgres database because heroku doesnt save database update
+    DATABASES["default"] = dj_database_url.parse(os.getenv("DATABASE_URL"), conn_max_age=600)
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
