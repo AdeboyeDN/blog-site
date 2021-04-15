@@ -42,11 +42,15 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     "crispy_bootstrap5",
 ]
 
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'account/login/'
+
+SITE_ID = 1
 
 
 MIDDLEWARE = [
