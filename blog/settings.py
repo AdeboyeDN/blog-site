@@ -101,6 +101,9 @@ if os.getenv("ENVIRONMENT"):
     DEBUG = False
 
     # you need to use postgres database because heroku doesnt save database update
+    # the fix is to configure heroku for prod environment
+    # because it was using sqlite3 as db but sqlite doesnt save
+    # database update aftr you finish running the command
     DATABASES["default"] = dj_database_url.parse(os.getenv("DATABASE_URL"), conn_max_age=600)
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
