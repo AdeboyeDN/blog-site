@@ -160,7 +160,7 @@ MEDIA_ROOT =  (
 )
 MEDIA_URL = '/media/'
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 #crispy
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
