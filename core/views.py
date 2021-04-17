@@ -14,7 +14,7 @@ class blogCreateView(generic.CreateView):
         form.instance.slug= self.request.POST.get('title').replace(' ','-')
         return super().form_valid(form)
     
-class blogListView(LoginRequiredMixin, generic.ListView):
+class blogListView(generic.ListView):
     paginate_by = 5
     model = blog
     template_name = "home.html"
