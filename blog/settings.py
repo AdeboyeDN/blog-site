@@ -25,7 +25,7 @@ SECRET_KEY = '7$3y=d3_qf*rc^a&i_v)6)y%+f586jom82x6#l!j=(+qr^!ndg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #https://developerola-blog.herokuapp.com/
-ALLOWED_HOSTS = ['developerola-blog.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['developerola-blog.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -152,15 +152,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT =  (
-    BASE_DIR / '/staticfiles/'
+    BASE_DIR / 'staticfiles'
 )
 
 MEDIA_ROOT =  (
-    BASE_DIR / 'static/media/'
+    BASE_DIR / 'static/media'
 )
-
 MEDIA_URL = '/media/'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 #crispy
