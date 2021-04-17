@@ -24,7 +24,7 @@
             <a href="{% url 'detail' tag.slug tag.pk %}" >view post</a>
         </div>
     </div>
-    {% if tag %}
+{% if tag %}
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}

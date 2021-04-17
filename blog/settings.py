@@ -98,7 +98,7 @@ DATABASES = {
 if os.getenv("ENVIRONMENT"):
     import dj_database_url
     DATABASES = {}
-    DEBUG = False
+    DEBUG = True
 
     # you need to use postgres database because heroku doesnt save database update
     # the fix is to configure heroku for prod environment
