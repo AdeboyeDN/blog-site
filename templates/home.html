@@ -12,7 +12,7 @@
      </div>
     </div>
 {% if request.user.is_authenticated %}
-<button type="button" class="btn btn-info"><a href="{% url 'create'%}">Back</a> </button><br>
+<button type="button" class="btn btn-info"><a href="{% url 'create'%}">Create post</a> </button><br>
 {% endif %}
      <hr>
      {% for tag in object_list %}
