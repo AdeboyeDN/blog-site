@@ -156,7 +156,7 @@ STATIC_ROOT =  (
 )
 
 MEDIA_ROOT =  (
-    BASE_DIR / '/media/'
+    BASE_DIR / 'static/media/'
 )
 
 MEDIA_URL = '/media/'
