@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container">
-     {% if request.user.is_staff %}
+     {% if request.user.is_authenticated %}
      <div class="alert alert-info alert-dismissible fade show" role="alert">
-      Welcome {{request.user}}!    <a href="{% url 'create' %}" >create your blog post</a>
+      Welcome {{request.user}}!
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
      {% else %}
      <div class="alert alert-info alert-dismissible fade show" role="alert">
-     Welcome {{request.user}}!
-     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     Welcome visitor kindly create singin to have more access
      {% endif %}
      </div>
     </div>
-
-
+{% if request.user.is_authenticated %}
+<button type="button" class="btn btn-info"><a href="{% url 'create'%}">Back</a> </button><br>
+{% endif %}
      <hr>
      {% for tag in object_list %}
      <div class="card mb-3">
