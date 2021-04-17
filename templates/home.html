@@ -24,7 +24,8 @@
             <a href="{% url 'detail' tag.slug tag.pk %}" >view post</a>
         </div>
     </div>
-{% if tag %}
+     {% endfor %}
+
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
@@ -42,10 +43,6 @@
         {% endif %}
     </span>
 </div>
-     {% endfor %}
-
-
-{% endif %}
 {% endblock %}
 
 
